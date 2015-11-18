@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:id="@+id/view">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bLayout"
+        android:background="#078f1f"
+        android:layout_weight="0.06">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:weightSum="1"
+            android:outlineProvider="bounds"
+            android:nestedScrollingEnabled="true"
+            android:background="#ffffff"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="70dp"
+                android:text="AM"
+                android:id="@+id/dayView"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:textColor="#71985a"
+                android:textSize="30dp"
+                android:textIsSelectable="false"
+                android:textStyle="normal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="84dp"
+                android:text="11"
+                android:id="@+id/hourView"
+                android:textColor="#71985a"
+                android:textSize="40dp"
+                android:textIsSelectable="false"
+                android:textStyle="normal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_alignParentBottom="true" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:text=":"
+                android:id="@+id/delView"
+                android:textColor="#71985a"
+                android:textSize="40dp"
+                android:textIsSelectable="false"
+                android:textStyle="normal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/hourView"
+                android:layout_alignParentBottom="true" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:text="30"
+                android:id="@+id/minView"
+                android:textColor="#71985a"
+                android:textSize="40dp"
+                android:textIsSelectable="false"
+                android:textStyle="normal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/delView"
+                android:layout_alignParentBottom="true" />
+
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:id="@+id/sButton"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/off_button"
+                android:padding="0sp"
+                android:scaleType="centerCrop"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="0.27"
+                android:layout_marginRight="0dp"
+                android:clickable="true"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
