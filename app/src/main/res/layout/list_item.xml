@@ -19,7 +19,8 @@
             android:outlineProvider="bounds"
             android:nestedScrollingEnabled="true"
             android:background="#ffffff"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:clickable="false">
 
             <TextView
                 android:layout_width="50dp"

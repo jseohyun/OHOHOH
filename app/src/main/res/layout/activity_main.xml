@@ -50,7 +50,21 @@
         android:id="@+id/listView"
         android:layout_below="@+id/imageButton"
         android:layout_alignParentStart="true"
-        android:visibility="visible"
-        android:dividerHeight="2dp" />
+        android:dividerHeight="4dp"
+        android:divider="#c8bbdca8"
+        android:contextClickable="false" />
+
+    <ImageButton
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:id="@+id/addButton"
+        android:layout_below="@+id/listView"
+        android:layout_alignParentStart="false"
+        android:src="@drawable/add_button"
+        android:padding="0sp"
+        android:scaleType="centerInside"
+        android:layout_centerInParent="true"
+        android:background="#ffffff"
+        android:onClick="addActivity" />
 
 </RelativeLayout>

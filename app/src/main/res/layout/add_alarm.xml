@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    tools:context=".MainActivity"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/settingBtn"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="false"
+            android:src="@drawable/settint_icon"
+            android:layout_alignParentEnd="true"
+            android:scaleType="centerInside"
+            android:background="#ffffff"
+            android:layout_marginRight="10dp"
+            android:nestedScrollingEnabled="false"
+            android:onClick="mainActivity" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:layout_alignBottom="@+id/settingBtn"
+            android:layout_toStartOf="@+id/settingBtn"
+            android:background="#ffffff"
+            android:src="@drawable/add_alarm" />
+
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timePicker"
+            android:timePickerMode="spinner"
+            android:layout_below="@+id/settingBtn"
+            android:background="#829974"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+</LinearLayout>
