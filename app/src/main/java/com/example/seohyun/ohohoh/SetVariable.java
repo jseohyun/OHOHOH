@@ -47,7 +47,7 @@ public class SetVariable {
     public void setColdSound(String coldSound) {
         sv.coldSound = coldSound;
     }
-    public String getcoldSound(){
+    public String getColdSound(){
         return sv.coldSound;
     }
     public void setyTemp(int yTemp){sv.yTemp = yTemp;};

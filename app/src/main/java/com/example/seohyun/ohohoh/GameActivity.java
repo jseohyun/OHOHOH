@@ -34,7 +34,7 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
 
     private Rain rain;
     private Umbrella umbrella;
-    private String weather;
+    private String weather = "Snowy";
     private String temp;
     private GraphicsView graphicsView;
     private LinearLayout.LayoutParams param;
@@ -58,18 +58,57 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
     public void complete(String weather, String temp){
         Log.d(weather, weather);
         Log.d(temp, temp);
-        this.weather = weather;
+        //this.weather = weather;
+        this.weather = "Snowy";
         this.temp = temp;
         this.Temp = Integer.parseInt(this.temp);
-        //this.yTemp = sv.getyTemp();
-        this.yTemp = Temp + 1;
+        this.yTemp = sv.getyTemp();
+        //this.yTemp = Temp + 1;
         playSound(yTemp, Temp, weather);
+
+
     }
     private void get(){
        new SHRequest().execute(this, null, null);
     }
     public void playSound(int yTemp, int Temp, String weather){
-        if(yTemp <= Temp){           //warmer than yesterday
+        if(weather.contains("Rain")){
+            if(sv.getRainSound().equals("rain1")){
+                mSound = MediaPlayer.create(this,R.raw.rain1);
+                Log.d("game rain","rain1");
+
+            }
+            else if(sv.getRainSound().contains("rain2")){
+                mSound = MediaPlayer.create(this,R.raw.warm2);
+                Log.d("game rain","rain2");
+
+            }else if(sv.getRainSound().equals("rain3")){
+                mSound = MediaPlayer.create(this,R.raw.rain3);
+                Log.d("game rain","rain3");
+
+            }
+
+        }
+
+        else if(weather.contains("Snow")){
+            if(sv.getSnowSound().equals("snow1")){
+                mSound = MediaPlayer.create(this,R.raw.snow1);
+                Log.d("game snow","snow1");
+
+            }
+            else if(sv.getSnowSound().contains("snow2")){
+                mSound = MediaPlayer.create(this,R.raw.snow2);
+                Log.d("game snow","snow2");
+
+            }else if(sv.getSnowSound().equals("snow3")){
+                mSound = MediaPlayer.create(this,R.raw.snow3);
+                Log.d("game snow","snow3");
+
+            }
+        }
+
+
+       else if(yTemp <= Temp){           //warmer than yesterday
             if(sv.getWarmSound().equals("warm1")){
                 mSound = MediaPlayer.create(this,R.raw.warm1);
                 Log.d("game warm","warm1");
@@ -86,9 +125,20 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
             }
         }
         else{
-            mSound = MediaPlayer.create(this,R.raw.cold1);
-            Log.d("cold!!!",sv.getcoldSound());
-            //Log.d("game warm","실패!!!!!!!!!!!!!망!!!!!");
+            if(sv.getColdSound().equals("cold1")){
+                mSound = MediaPlayer.create(this,R.raw.cold1);
+                Log.d("game cold","cold1");
+
+            }
+            else if(sv.getColdSound().contains("cold2")){
+                mSound = MediaPlayer.create(this,R.raw.cold2);
+                Log.d("game cold","cold2");
+
+            }else if(sv.getColdSound().equals("cold3")){
+                mSound = MediaPlayer.create(this,R.raw.cold3);
+                Log.d("game cold","cold3");
+
+            }
         }
         //mSound = MediaPlayer.create(this,R.raw.obliviate);
         mSound.start();
@@ -207,7 +257,11 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
 
         }
         protected void onDraw(Canvas canvas){
-            if(yTemp<Temp)
+
+            if(weather.contains("Snow")){
+                snowGame(canvas);
+            }
+            else if(yTemp<Temp)
                 warmGame(canvas);
             else coldGame(canvas);
             if(i == 1)
@@ -226,14 +280,7 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
             }
 
 
-            /*
-            canvas.save();
-            umbrella.draw(canvas);
 
-            canvas.save();
-
-            rain.draw(canvas);
-            */
 
 
 
@@ -348,6 +395,68 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
 
 
 
+
+            }
+
+
+
+
+            //left,top,right,bottom
+            canvas.drawRect(fireBox, paint);
+
+
+
+        }
+        public void snowGame(Canvas canvas){
+
+            Paint paint = new Paint(Color.BLACK);
+            Bitmap umbrella = BitmapFactory.decodeResource(getResources(), R.drawable.umbrella);
+            Bitmap umbrella1,umbrella2,umbrella3,umbrella4,umbrella5;
+            umbrella1 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+            umbrella2 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+            umbrella3 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+            umbrella4 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+            umbrella5 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+
+            btn1.setImageResource(R.drawable.umbrella);
+            btn2.setImageResource(R.drawable.umbrella);
+            btn3.setImageResource(R.drawable.umbrella);
+            btn4.setImageResource(R.drawable.umbrella);
+            btn5.setImageResource(R.drawable.umbrella);
+            cloud.setImageResource(R.drawable.snowy);
+            tempView.setImageResource(R.drawable.rsz_cold);
+
+
+            Rect fireBox = new Rect(400,200,700,220);
+
+            if(i==1) {
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+
+            }else if(i==2){
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+                canvas.drawBitmap(umbrella2, 550, 50, null);//left,top
+
+            }else if(i==3){
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+                canvas.drawBitmap(umbrella2, 550, 50, null);//left,toㅔ
+                canvas.drawBitmap(umbrella3, 500, 100, null);//left,top
+
+
+            }else if(i==4){
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+                canvas.drawBitmap(umbrella2, 550, 50, null);//left,top
+                canvas.drawBitmap(umbrella3, 500, 100, null);//left,top
+                canvas.drawBitmap(umbrella4, 450, 50, null);//left,top
+
+
+
+            }else if(i==5){
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+                canvas.drawBitmap(umbrella2, 550, 50, null);//left,top
+                canvas.drawBitmap(umbrella3, 500, 100, null);//left,top
+                canvas.drawBitmap(umbrella4, 450, 50, null);//left,top
+                canvas.drawBitmap(umbrella5, 400, 100, null);//left,top
+                
 
             }
 

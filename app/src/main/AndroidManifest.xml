@@ -50,6 +50,18 @@
             android:name=".SetWarmSoundActivity"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name=".SetRainySoundActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".SetColdSoundActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".SetSnowySoundActivity"
+            android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>

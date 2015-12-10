@@ -19,7 +19,6 @@ public class SetSoundActivity extends AppCompatActivity {
     ImageButton snowBtn;
     ImageButton warmBtn;
     ImageButton coldBtn;
-    int menuNum=0;//1=rain, 2= snow, 3=warm, 4= cold
 
     protected void onCreate(Bundle savedInstanceState) {
 
