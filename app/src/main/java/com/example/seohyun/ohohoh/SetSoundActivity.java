@@ -31,47 +31,50 @@ public class SetSoundActivity extends AppCompatActivity {
         coldBtn = (ImageButton)findViewById(R.id.coldBtn);
 
 
-        sv.setRainSound("raiin2");
-        Log.d("비소리", sv.getRainSound());
 
 
     }
-    /*
-    public boolean onCreateOptionsMenu(Menu menu){
-        super.onCreateOptionsMenu(menu);
-        MenuInflater inflater = getMenuInflater();
-        if(menuNum==1)
-            inflater.inflate(R.menu.raincheck,menu);
-        else if(menuNum==2)
-            inflater.inflate(R.menu.snowcheck,menu);
-        else if(menuNum==3)
-            inflater.inflate(R.menu.warmcheck,menu);
-        else if(menuNum==4)
-            inflater.inflate(R.menu.coldcheck,menu);
 
-        return true;
-    }
-    */
 
     public void mOnClick(View view){
         switch (view.getId()){
             case R.id.rainBtn:
-
+                setRainySoundActivity();
                 break;
             case R.id.snowBtn:
-                menuNum = 2;
+                setSnowySoundActivity();
+                break;
 
             case R.id.warmBtn:
                 setWarmSoundActivity();
                 break;
             case R.id.coldBtn:
-
+                setColdSoundActivity();
                 break;
         }
     }
-    public void setWarmSoundActivity(){
+   public void setWarmSoundActivity(){
         Intent intent = new Intent(this,SetWarmSoundActivity.class);
         finish();
         startActivity(intent);
     }
+    public void setColdSoundActivity(){
+        Intent intent = new Intent(this,SetColdSoundActivity.class);
+        finish();
+        startActivity(intent);
+    }
+    public void setSnowySoundActivity(){
+        Intent intent = new Intent(this,SetSnowySoundActivity.class);
+        finish();
+        startActivity(intent);
+    }
+    public void setRainySoundActivity(){
+        Intent intent = new Intent(this,SetRainySoundActivity.class);
+        finish();
+        startActivity(intent);
+    }
+
+
+
+
 }
