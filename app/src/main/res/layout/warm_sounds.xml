@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/settingBtn"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="false"
+            android:src="@drawable/settint_icon"
+            android:layout_alignParentEnd="true"
+            android:scaleType="centerInside"
+            android:background="#ffffff"
+            android:layout_marginRight="10dp"
+            android:nestedScrollingEnabled="false" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:background="#ffffff"
+            android:src="@drawable/set"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView2"
+            android:layout_alignParentStart="true"
+            android:checkedButton="@+id/warmSound1"
+            android:id="@+id/radioGroup">
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="따뜻한 노래#01"
+            android:id="@+id/warmSound1"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView2"
+            android:textColor="#4cb900"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="따뜻한 노래 #02"
+            android:id="@+id/warmSound2"
+            android:layout_below="@+id/radioButton"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:checked="false"
+            android:textColor="#4cb900"
+            android:textSize="20dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="따뜻한 노래#03"
+            android:id="@+id/warmSound3"
+            android:layout_below="@+id/warmSound2"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:textColor="#4cb900"
+            android:textSize="20dp"/>
+        </RadioGroup>
+
+    </RelativeLayout>
+</LinearLayout>

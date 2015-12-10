@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    tools:context=".SetSoundActivity"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/settingBtn"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="false"
+            android:src="@drawable/settint_icon"
+            android:layout_alignParentEnd="true"
+            android:scaleType="centerInside"
+            android:background="#ffffff"
+            android:layout_marginRight="10dp"
+            android:nestedScrollingEnabled="false"
+            android:onClick="mainActivity" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:background="#ffffff"
+            android:src="@drawable/set"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/coldBtn"
+            android:src="@drawable/cold_btn"
+            android:scaleType="centerInside"
+            android:background="#ffffff"
+            android:layout_below="@+id/settingBtn"
+            android:layout_alignParentStart="true"
+            android:onClick="mOnClick" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/warmBtn"
+            android:background="#ffffff"
+            android:src="@drawable/warm_btn"
+            android:scaleType="centerInside"
+            android:layout_below="@+id/coldBtn"
+            android:layout_alignParentStart="true"
+            android:onClick="mOnClick" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rainBtn"
+            android:layout_below="@+id/warmBtn"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/rain_btn"
+            android:scaleType="centerInside"
+            android:background="#ffffff"
+            android:onClick="mOnClick" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/snowBtn"
+            android:layout_below="@+id/rainBtn"
+            android:layout_centerHorizontal="true"
+            android:background="#ffffff"
+            android:scaleType="centerInside"
+            android:src="@drawable/snow_btn"
+            android:onClick="mOnClick" />
+
+    </RelativeLayout>
+</LinearLayout>

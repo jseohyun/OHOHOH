@@ -11,7 +11,7 @@ public class AlarmList {
 //싱글톤 디자인 패턴
     public File listFile;
     private static ArrayList<AlarmData> list = new ArrayList();
-    private static AlarmList alarmList = new AlarmList();
+
     public static ArrayList<AlarmData> getAlarmList(){
         return list;
     }

@@ -22,7 +22,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
  * Created by SeoHyun on 15. 11. 24..
  */
 interface CompleteRequest{
-    public void complete(String a, String b);
+    public void complete(String weather, String temp);
 }
 public class SHRequest extends AsyncTask<CompleteRequest, Void, Void> {
     public String weather;

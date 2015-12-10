@@ -26,7 +26,7 @@ import java.util.TimeZone;
 /**
  * Created by SeoHyun on 15. 11. 19..
  */
-public class AddActivity extends Activity {
+public class AddActivity extends AppCompatActivity {
     public static final int DEFAULT_ALARM_REQUEST = 800;
 
     private TimePicker timePicker;
@@ -105,14 +105,7 @@ public class AddActivity extends Activity {
         alarmData.reqCode = reqCode;
         list.add(alarmData);
 
-
-
-        //intent.putExtra("AlarmList",m_arr);
         Intent gIntent = new Intent(this,GameActivity.class);
-
-        //intent.putExtra("reqCode", reqCode);
-
-        //Toast.makeText(mContext, "reqCode : " + reqCode, 0).show();
         PendingIntent pi = PendingIntent.getActivity(this,reqCode, gIntent,PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager.set(AlarmManager.RTC_WAKEUP, gregorianCalendar.getTimeInMillis() ,pi);
         System.out.println(gregorianCalendar.getTimeInMillis());
