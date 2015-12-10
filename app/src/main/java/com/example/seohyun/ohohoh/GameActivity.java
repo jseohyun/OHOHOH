@@ -34,7 +34,7 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
 
     private Rain rain;
     private Umbrella umbrella;
-    private String weather = "Rainy";
+    private String weather =" ";
     private String temp;
     private GraphicsView graphicsView;
     private LinearLayout.LayoutParams param;
