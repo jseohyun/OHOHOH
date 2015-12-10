@@ -34,7 +34,7 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
 
     private Rain rain;
     private Umbrella umbrella;
-    private String weather = "Snowy";
+    private String weather = "Rainy";
     private String temp;
     private GraphicsView graphicsView;
     private LinearLayout.LayoutParams param;
@@ -58,8 +58,8 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
     public void complete(String weather, String temp){
         Log.d(weather, weather);
         Log.d(temp, temp);
-        //this.weather = weather;
-        this.weather = "Snowy";
+        this.weather = weather;
+        //this.weather = "Rainy";
         this.temp = temp;
         this.Temp = Integer.parseInt(this.temp);
         this.yTemp = sv.getyTemp();
@@ -261,6 +261,9 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
             if(weather.contains("Snow")){
                 snowGame(canvas);
             }
+            else if(weather.contains("Rain")){
+                rainGame(canvas);
+            }
             else if(yTemp<Temp)
                 warmGame(canvas);
             else coldGame(canvas);
@@ -456,19 +459,73 @@ public class GameActivity extends AppCompatActivity implements CompleteRequest {
                 canvas.drawBitmap(umbrella3, 500, 100, null);//left,top
                 canvas.drawBitmap(umbrella4, 450, 50, null);//left,top
                 canvas.drawBitmap(umbrella5, 400, 100, null);//left,top
-                
+
 
             }
-
-
-
 
             //left,top,right,bottom
             canvas.drawRect(fireBox, paint);
 
+        }
 
+        public void rainGame(Canvas canvas){
+
+            Paint paint = new Paint(Color.BLACK);
+            Bitmap umbrella = BitmapFactory.decodeResource(getResources(), R.drawable.umbrella);
+            Bitmap umbrella1,umbrella2,umbrella3,umbrella4,umbrella5;
+            umbrella1 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+            umbrella2 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+            umbrella3 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+            umbrella4 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+            umbrella5 = Bitmap.createScaledBitmap(umbrella, 100, 100, true);
+
+            btn1.setImageResource(R.drawable.umbrella);
+            btn2.setImageResource(R.drawable.umbrella);
+            btn3.setImageResource(R.drawable.umbrella);
+            btn4.setImageResource(R.drawable.umbrella);
+            btn5.setImageResource(R.drawable.umbrella);
+            cloud.setImageResource(R.drawable.rainy);
+            tempView.setImageResource(R.drawable.rsz_hot);
+
+
+            Rect fireBox = new Rect(400,200,700,220);
+
+            if(i==1) {
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+
+            }else if(i==2){
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+                canvas.drawBitmap(umbrella2, 550, 50, null);//left,top
+
+            }else if(i==3){
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+                canvas.drawBitmap(umbrella2, 550, 50, null);//left,toㅔ
+                canvas.drawBitmap(umbrella3, 500, 100, null);//left,top
+
+
+            }else if(i==4){
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+                canvas.drawBitmap(umbrella2, 550, 50, null);//left,top
+                canvas.drawBitmap(umbrella3, 500, 100, null);//left,top
+                canvas.drawBitmap(umbrella4, 450, 50, null);//left,top
+
+
+
+            }else if(i==5){
+                canvas.drawBitmap(umbrella1, 600, 100, null);//left,top
+                canvas.drawBitmap(umbrella2, 550, 50, null);//left,top
+                canvas.drawBitmap(umbrella3, 500, 100, null);//left,top
+                canvas.drawBitmap(umbrella4, 450, 50, null);//left,top
+                canvas.drawBitmap(umbrella5, 400, 100, null);//left,top
+
+
+            }
+
+            //left,top,right,bottom
+            canvas.drawRect(fireBox, paint);
 
         }
+
 
 
     }
